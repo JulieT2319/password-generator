@@ -12,7 +12,7 @@ var nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var password = "";
 
 var length = prompt("How long do you want your password to be? (8-128 characters)");
-while (typeof (length) !== "number" ||) {
+while (typeof (length) !== "number" || length < 8 || length > 128) {
 	length = prompt("Please enter a number between 8 and 128");
 }
 
