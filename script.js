@@ -10,7 +10,7 @@ var specials = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',',
 var nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 //declare password variable
 var password = "";
-
+var passwordTemp = "";
 var length = parseInt(prompt("How long do you want your password to be? (8-128 characters)"));
 console.log(typeof length)
 while (isNaN(length) || length < 8 || length > 128) {
@@ -27,18 +27,16 @@ while (length !== password.length) {
 	var charType = Math.floor(Math.random() * 4);
 
 	if (charType === 0 && specChars) {
-		password = concat(password, specChars[Math.floor(Math.random() * specChars.length)]);
-		console.log(password);
+		passwordTemp = password.concat(specChars[Math.floor(Math.random() * specChars.length)]);
 	} else if (charType === 1 && upperCase) {
-		password = concat(password, toUperCase(alpha[Math.floor(Math.random() * alpha.length)]));
-		console.log(password);
+		passwordTemp = password.concat(alpha[Math.floor(Math.random() * alpha.length)].toUpperCase());
 	} else if (charType === 2 && lowerCase) {
-		password = concat(password, alpha[Math.floor(Math.random() * alpha.length)]);
-		console.log(password);
+		passwordTemp = password.concat(alpha[Math.floor(Math.random() * alpha.length)]);
 	} else if (charType === 3 && numbers) {
-		password = concat(password, nums[Math.floor(Math.random() * nums.length)]);
-		console.log(password);
+		passwordTemp = password.concat(nums[Math.floor(Math.random() * nums.length)]);
 	}
+	password = passwordTemp
+	console.log(password);
 }
 
 alert("Your password is " + password);
