@@ -8,5 +8,11 @@ var specials = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',',
 	'}', '~'];
 //numbers as strings, beginning with 0
 var nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+//declare password variable
+var password = "";
 
+var length = prompt("How long do you want your password to be? (8-128 characters)");
+while (typeof (length) !== "number" ||) {
+	length = prompt("Please enter a number between 8 and 128");
+}
 
