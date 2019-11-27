@@ -23,6 +23,22 @@ var lowerCase = confirm("Should your password contain lower case alphabetic char
 var numbers = confirm("Should your password contain numbers?");
 
 // set password with loop
-// while (length > 0) {
-// 	var
-// }
+while (length !== password.length) {
+	var charType = Math.floor(Math.random() * 4);
+
+	if (charType === 0 && specChars) {
+		password = concat(password, specChars[Math.floor(Math.random() * specChars.length)]);
+		console.log(password);
+	} else if (charType === 1 && upperCase) {
+		password = concat(password, toUperCase(alpha[Math.floor(Math.random() * alpha.length)]));
+		console.log(password);
+	} else if (charType === 2 && lowerCase) {
+		password = concat(password, alpha[Math.floor(Math.random() * alpha.length)]);
+		console.log(password);
+	} else if (charType === 3 && numbers) {
+		password = concat(password, nums[Math.floor(Math.random() * nums.length)]);
+		console.log(password);
+	}
+}
+
+alert("Your password is " + password);
