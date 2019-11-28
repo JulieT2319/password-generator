@@ -16,14 +16,10 @@
 	<textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
 	<p>How long should your password be?</p>
 	<input type="number" name="length" id="length" placeholder="Number between 8 and 128">
-	<p>Should the password contain special characters?</p>
-	<input type="checkbox" name="special" id="specials">
-	<p>Should the password contain upper case letters?</p>
-	<input type="checkbox" name="upper" id="upper">
-	<p>Should the password contain lower case letters?</p>
-	<input type="checkbox" name="lower" id="lower">
-	<p>Should the password contain ?</p>
-	<input type="checkbox" name="number" id="number">
+	<p>Should the password contain special characters?<input type="checkbox" name="special" id="specials"></p>
+	<p>Should the password contain upper case letters? <input type="checkbox" name="upper" id="upper"></p>
+	<p>Should the password contain lower case letters?<input type="checkbox" name="lower" id="lower"></p>
+	<p>Should the password contain ?<input type="checkbox" name="number" id="number"></p>
 	<button id="generate">Generate Password</button>
 	<button id="copy" onclick="copyText()">
 		Copy to Clipboard
