@@ -18,7 +18,7 @@ var lowerCase = document.getElementById("lower").checked;//confirm("Should your 
 var numbers = document.getElementById("number").checked;// confirm("Should your password contain numbers?");
 
 function generatePassword() {
-	document.getElementById("password").innerHTML = "";
+	password = "";
 	length = document.getElementById("length").value;
 	while (isNaN(length) || length < 8 || length > 128) {
 		length = prompt("Please enter a number between 8 and 128");
@@ -48,10 +48,11 @@ function generatePassword() {
 			} else {
 				i++;
 			}
-			password = passwordTemp
+			password = passwordTemp;
 			console.log(password);
 		}
-		document.getElementById("password").innerHTML = password
+
+		document.getElementById("password").innerHTML = "";
+		document.getElementById("password").innerHTML = password;
 	}
 }
-alert("Your password is " + password);
