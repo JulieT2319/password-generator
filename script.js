@@ -10,7 +10,6 @@ var specials = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',',
 var nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 //declare password variable
 var password = "";
-var passwordTemp = "";
 var length = document.getElementById("length").value;//parseInt(prompt("How long do you want your password to be? (8-128 characters)"));
 var specChars = document.getElementById("specials").checked;//confirm("Should your password include special characters like @,!,% etc.?");
 var upperCase = document.getElementById("upper").checked;//confirm("Should your password contain upper case alphabetic characters?");
@@ -38,17 +37,16 @@ function generatePassword() {
 			var charType = Math.floor(Math.random() * 4);
 
 			if (charType === 0 && specChars) {
-				passwordTemp = password.concat(specials[Math.floor(Math.random() * specials.length)]);
+				password = password.concat(specials[Math.floor(Math.random() * specials.length)]);
 			} else if (charType === 1 && upperCase) {
-				passwordTemp = password.concat(alpha[Math.floor(Math.random() * alpha.length)].toUpperCase());
+				password = password.concat(alpha[Math.floor(Math.random() * alpha.length)].toUpperCase());
 			} else if (charType === 2 && lowerCase) {
-				passwordTemp = password.concat(alpha[Math.floor(Math.random() * alpha.length)]);
+				password = password.concat(alpha[Math.floor(Math.random() * alpha.length)]);
 			} else if (charType === 3 && numbers) {
-				passwordTemp = password.concat(nums[Math.floor(Math.random() * nums.length)]);
+				password = password.concat(nums[Math.floor(Math.random() * nums.length)]);
 			} else {
 				i++;
 			}
-			password = passwordTemp;
 			console.log(password);
 		}
 
