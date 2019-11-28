@@ -17,10 +17,11 @@ while (isNaN(length) || length < 8 || length > 128) {
 	length = prompt("Please enter a number between 8 and 128");
 }
 //prompt for character types to include
-var specChars = confirm("Should your password include special characters like @,!,% etc.?");
-var upperCase = confirm("Should your password contain upper case alphabetic characters?");
-var lowerCase = confirm("Should your password contain lower case alphabetic characters?");
-var numbers = confirm("Should your password contain numbers?");
+//change to reference checkboxes on html list
+var specChars = document.getElementById("specials").checked;//confirm("Should your password include special characters like @,!,% etc.?");
+var upperCase = document.getElementById("upper").checked;//confirm("Should your password contain upper case alphabetic characters?");
+var lowerCase = document.getElementById("lower").checked;//confirm("Should your password contain lower case alphabetic characters?");
+var numbers = document.getElementById("number").checked;// confirm("Should your password contain numbers?");
 
 // set password with loop
 for (i = length; i > 0; i--) {
