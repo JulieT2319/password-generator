@@ -11,14 +11,15 @@ var nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 //declare password variable
 var password = "";
 var passwordTemp = "";
-var length = document.getElementById("myNumber").value;//parseInt(prompt("How long do you want your password to be? (8-128 characters)"));
+var length = document.getElementById("length").value;//parseInt(prompt("How long do you want your password to be? (8-128 characters)"));
 var specChars = document.getElementById("specials").checked;//confirm("Should your password include special characters like @,!,% etc.?");
 var upperCase = document.getElementById("upper").checked;//confirm("Should your password contain upper case alphabetic characters?");
 var lowerCase = document.getElementById("lower").checked;//confirm("Should your password contain lower case alphabetic characters?");
 var numbers = document.getElementById("number").checked;// confirm("Should your password contain numbers?");
 
 function generatePassword() {
-
+	document.getElementById("password").innerHTML = "";
+	length = document.getElementById("length").value;
 	while (isNaN(length) || length < 8 || length > 128) {
 		length = prompt("Please enter a number between 8 and 128");
 	}
@@ -50,6 +51,7 @@ function generatePassword() {
 			password = passwordTemp
 			console.log(password);
 		}
+		document.getElementById("password").innerHTML = password
 	}
 }
 alert("Your password is " + password);
