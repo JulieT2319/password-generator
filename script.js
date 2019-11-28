@@ -17,36 +17,39 @@ var upperCase = document.getElementById("upper").checked;//confirm("Should your 
 var lowerCase = document.getElementById("lower").checked;//confirm("Should your password contain lower case alphabetic characters?");
 var numbers = document.getElementById("number").checked;// confirm("Should your password contain numbers?");
 
-function generatePassword()
+function generatePassword() {
 
-while (isNaN(length) || length < 8 || length > 128) {
-	length = prompt("Please enter a number between 8 and 128");
-}
-
-//prompt for character types to include
-//change to reference checkboxes on html list
-specChars = document.getElementById("specials").checked;//confirm("Should your password include special characters like @,!,% etc.?");
-upperCase = document.getElementById("upper").checked;//confirm("Should your password contain upper case alphabetic characters?");
-lowerCase = document.getElementById("lower").checked;//confirm("Should your password contain lower case alphabetic characters?");
-numbers = document.getElementById("number").checked;// confirm("Should your password contain numbers?");
-
-// set password with loop
-for (i = length; i > 0; i--) {
-	var charType = Math.floor(Math.random() * 4);
-
-	if (charType === 0 && specChars) {
-		passwordTemp = password.concat(specials[Math.floor(Math.random() * specials.length)]);
-	} else if (charType === 1 && upperCase) {
-		passwordTemp = password.concat(alpha[Math.floor(Math.random() * alpha.length)].toUpperCase());
-	} else if (charType === 2 && lowerCase) {
-		passwordTemp = password.concat(alpha[Math.floor(Math.random() * alpha.length)]);
-	} else if (charType === 3 && numbers) {
-		passwordTemp = password.concat(nums[Math.floor(Math.random() * nums.length)]);
-	} else {
-		i++;
+	while (isNaN(length) || length < 8 || length > 128) {
+		length = prompt("Please enter a number between 8 and 128");
 	}
-	password = passwordTemp
-	console.log(password);
-}
 
+	//prompt for character types to include
+	//change to reference checkboxes on html list
+	specChars = document.getElementById("specials").checked;//confirm("Should your password include special characters like @,!,% etc.?");
+	upperCase = document.getElementById("upper").checked;//confirm("Should your password contain upper case alphabetic characters?");
+	lowerCase = document.getElementById("lower").checked;//confirm("Should your password contain lower case alphabetic characters?");
+	numbers = document.getElementById("number").checked;// confirm("Should your password contain numbers?");
+	if (specChars === false && upperCase === false && lowerCase === false && numbers === false) {
+		alert("You must select at least one character type for your password")
+	} else {
+		// set password with loop
+		for (i = length; i > 0; i--) {
+			var charType = Math.floor(Math.random() * 4);
+
+			if (charType === 0 && specChars) {
+				passwordTemp = password.concat(specials[Math.floor(Math.random() * specials.length)]);
+			} else if (charType === 1 && upperCase) {
+				passwordTemp = password.concat(alpha[Math.floor(Math.random() * alpha.length)].toUpperCase());
+			} else if (charType === 2 && lowerCase) {
+				passwordTemp = password.concat(alpha[Math.floor(Math.random() * alpha.length)]);
+			} else if (charType === 3 && numbers) {
+				passwordTemp = password.concat(nums[Math.floor(Math.random() * nums.length)]);
+			} else {
+				i++;
+			}
+			password = passwordTemp
+			console.log(password);
+		}
+	}
+}
 alert("Your password is " + password);
