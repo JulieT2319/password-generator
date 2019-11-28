@@ -2,3 +2,13 @@ body {
 	background: url(assets/images/light-grey-terrazzo.png);
 	/* Background pattern from Toptal Subtle Patterns */
 }
+
+div{
+	background: rgba(0,168,144,.5);
+	width: 300px;
+	text-align: center;
+	padding: 2rem;
+	margin: auto;
+	font-family: 'Nunito', sans-serif;
+}
+

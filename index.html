@@ -7,25 +7,29 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>Password Generator</title>
 	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Nunito|Rubik&display=swap" rel="stylesheet">
 </head>
 
 <body>
-	<header>
-		<h1>Password Generator</h1>
-	</header>
-	<h2>Generate a Password</h2>
-	<textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
-	<p>How long should your password be?</p>
-	<input type="number" name="length" id="length" placeholder="Number between 8 and 128">
-	<p>Should the password contain special characters?<input type="checkbox" name="special" id="specials"></p>
-	<p>Should the password contain upper case letters? <input type="checkbox" name="upper" id="upper"></p>
-	<p>Should the password contain lower case letters?<input type="checkbox" name="lower" id="lower"></p>
-	<p>Should the password contain numbers?<input type="checkbox" name="number" id="number"></p>
-	<button id="generate" onclick="generatePassword()">Generate Password</button>
-	<button id="copy" onclick="copyText()">
-		Copy to Clipboard
-	</button>
-	<script src="script.js"></script>
+	<div>
+		<header>
+			<h1>Password Generator</h1>
+		</header>
+		<h2>Generate a Password</h2>
+		<textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
+		<p>How long should your password be?</p>
+		<input type="number" name="length" id="length" placeholder="Number between 8 and 128">
+		<p>Should the password contain special characters?<input type="checkbox" name="special" id="specials"></p>
+		<p>Should the password contain upper case letters? <input type="checkbox" name="upper" id="upper"></p>
+		<p>Should the password contain lower case letters?<input type="checkbox" name="lower" id="lower"></p>
+		<p>Should the password contain numbers?<input type="checkbox" name="number" id="number"></p>
+		<button id="generate" onclick="generatePassword()">Generate Password</button>
+		<button id="copy" onclick="copyText()">
+			Copy to Clipboard
+		</button>
+		<script src="script.js"></script>
+	</div>
+
 </body>
 
 </html>
