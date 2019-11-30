@@ -27,7 +27,7 @@ function generatePassword() {
 	numbers = document.getElementById("number").checked;// confirm("Should your password contain numbers?");
 
 	if (isNaN(length) || length < 8 || length > 128) {
-		alpha("Please enter a number between 8 and 128");
+		alert("Please enter a number between 8 and 128");
 	} else if (specChars === false && upperCase === false && lowerCase === false && numbers === false) {
 		alert("You must select at least one character type for your password")
 	} else {
