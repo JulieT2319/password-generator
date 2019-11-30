@@ -19,17 +19,16 @@ var numbers = document.getElementById("number").checked;// confirm("Should your 
 function generatePassword() {
 	password = "";
 	length = document.getElementById("length").value;
-	while (isNaN(length) || length < 8 || length > 128) {
-		length = prompt("Please enter a number between 8 and 128");
-	}
-
 	//prompt for character types to include
 	//change to reference checkboxes on html list
 	specChars = document.getElementById("specials").checked;//confirm("Should your password include special characters like @,!,% etc.?");
 	upperCase = document.getElementById("upper").checked;//confirm("Should your password contain upper case alphabetic characters?");
 	lowerCase = document.getElementById("lower").checked;//confirm("Should your password contain lower case alphabetic characters?");
 	numbers = document.getElementById("number").checked;// confirm("Should your password contain numbers?");
-	if (specChars === false && upperCase === false && lowerCase === false && numbers === false) {
+
+	if (isNaN(length) || length < 8 || length > 128) {
+		alpha("Please enter a number between 8 and 128");
+	} else if (specChars === false && upperCase === false && lowerCase === false && numbers === false) {
 		alert("You must select at least one character type for your password")
 	} else {
 		// set password with loop
