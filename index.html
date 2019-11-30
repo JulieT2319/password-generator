@@ -17,12 +17,15 @@
 		</header>
 		<h2>Generate a Password</h2>
 		<textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
-		<p>How long should your password be?</p>
+		<p>How many characters long should your password be? </p>
 		<input type="number" name="length" id="length" placeholder="Number (8 - 128)">
-		<p>Should the password contain special characters?<input type="checkbox" name="special" id="specials"></p>
-		<p>Should the password contain upper case letters? <input type="checkbox" name="upper" id="upper"></p>
-		<p>Should the password contain lower case letters?<input type="checkbox" name="lower" id="lower"></p>
-		<p>Should the password contain numbers?<input type="checkbox" name="number" id="number"></p>
+		<p>Please check the box for each character type you would like included in your password.</p>
+		<ul>
+			<li>Special Characters <input type="checkbox" name="special" id="specials"></li>
+			<li>Upper Case Letters <input type="checkbox" name="upper" id="upper"></li>
+			<li>Lower Case Letters <input type="checkbox" name="lower" id="lower"></li>
+			<li>Numbers <input type="checkbox" name="number" id="number"></li>
+		</ul>
 		<button id="generate" onclick="generatePassword()">Generate Password</button>
 		<button id="copy" onclick="copyText()">
 			Copy to Clipboard
