@@ -10,9 +10,9 @@ h1 {
 
 div {
 	background: rgba(0,168,144,.5);
-	width: 300px;
-	text-align: center;
-	padding: 1rem 2rem 2rem;
+	width: 100%;
+	text-align: left;
+	padding: 10px;
 	margin: auto;
 	font-family: 'Nunito', sans-serif;
 	overflow: auto;
@@ -29,6 +29,16 @@ ul{
 	list-style-type: none;
 	text-align: left;
 }
-li {
-	margin-left: 2rem;
+
+
+@media only screen and (min-width: 450px) {
+	div {
+		width: 300px;
+		text-align: center;
+		padding: 1rem 2rem 2rem;
+	}
+
+	li {
+		margin-left: 2rem;
+	}
 }
