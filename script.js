@@ -46,7 +46,7 @@ function generatePassword() {
 			} else {
 				i++;
 			}
-			console.log(password);
+			// console.log(password);
 		}
 
 		document.getElementById("password").innerHTML = "";
